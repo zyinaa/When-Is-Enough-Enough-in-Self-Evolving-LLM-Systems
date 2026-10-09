@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evodetector"
+version = "0.1.0"
+description = "When to stop a self-evolving LLM loop, and which artifact to return (code for: When Is Enough Enough in Self-Evolving LLM Systems?)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Enoch Yin" },
+  { name = "Bin Liu" },
+  { name = "Zhengling Qi" },
+]
+dependencies = []
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+evodetector = "evodetector.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
